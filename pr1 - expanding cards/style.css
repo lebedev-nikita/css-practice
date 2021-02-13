@@ -33,6 +33,39 @@ body {
   transition: flex 0.4s ease-in-out;
 }
 
+/* Вариант 1 */
+.panel::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  z-index: 0;
+}
+.panel.active::before {
+  animation: make-blue 2s linear 2 alternate;
+}
+@keyframes make-blue {
+  0% {}
+  25%, 100% {
+    background-color: rgba(200, 100, 200, 0.3);
+  }
+}
+
+/* Вариант 2 */
+/* .panel::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transition: background-color 5s ease;
+  z-index: 0;
+}
+.panel.active::before {
+  background-color: rgba(200, 100, 200, 0.3);
+} */
+
 .panel h3 {
   font-size: 24px;
   position: absolute;
